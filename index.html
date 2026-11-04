@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashtakoota 36 Gunas Kundali Matching &amp; Navamsha D9 Synastry Reference — VedaAstro</title>
+  <meta name="description" content="Algorithmic specification for Vedic Ashtakoota 36 Gunas marriage compatibility (Кута-милан), 27 Nakshatras, Navamsha D9 harmonic chart, and Lahiri sidereal synastry.">
+  <link rel="canonical" href="https://vedaastro.github.io/ashtakoot-kundali-matching-36-gunas/">
+  <style>
+    :root { --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --accent: #1d4ed8; --border: #e2e8f0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.68; margin: 0; padding: 36px 20px; }
+    main { max-width: 900px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 36px 40px; box-shadow: 0 2px 8px rgba(15,23,42,0.04); }
+    h1 { font-size: 28px; line-height: 1.28; margin-top: 0; color: #0b1120; }
+    h2 { font-size: 21px; margin-top: 32px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    p, li { font-size: 16px; color: #1e293b; }
+    a { color: var(--accent); text-decoration: underline; font-weight: 500; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14.5px; }
+    th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; vertical-align: top; }
+    th { background: #f1f5f9; font-weight: 600; }
+    code, pre { background: #f1f5f9; border-radius: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    code { padding: 2px 6px; font-size: 0.9em; }
+    pre { padding: 14px 16px; overflow-x: auto; font-size: 13.5px; border: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Vedic Ashtakoota 36 Gunas Compatibility Matrix, Navamsha D9 &amp; Sidereal Synastry</h1>
+  <p>Mathematical and astronomical reference for <strong>Ashtakoota Milan (36 Gunas / Аштакута-милан 36 баллов)</strong>, 27 Lunar Nakshatras (<code>13° 20'</code> ecliptic arcs), <strong>Navamsha D9</strong> (<code>3° 20'</code> harmonic divisions), and dual Tropical/Sidereal synastry.</p>
+
+  <h2>1. Interactive Production Calculators</h2>
+  <ul>
+    <li><strong>Russian Natal Chart D1/D9 (АстроГуру):</strong> <a href="https://astroguru.ru/chart-public">Натальная карта по дате рождения онлайн (Джйотиш + Западная проекция)</a></li>
+    <li><strong>Russian Synastry &amp; Compatibility (АстроГуру):</strong> <a href="https://astroguru.ru/sovmestimost">Совместимость по дате рождения и натальной карте (Аштакута 36 Гун и синастрия)</a></li>
+    <li><strong>International Compatibility Engine (AstrologyCalc):</strong> <a href="https://astrologycalc.com/compatibility-calculator/">Birth Chart &amp; Vedic Kundali Matching Compatibility Calculator (36 Gunas)</a></li>
+  </ul>
+
+  <h2>2. Sidereal Lunar Coordinate &amp; Navamsha D9 Equations</h2>
+  <p>Using the Chitra Paksha Lahiri ayanamsha (<code>24° 13' 40''</code> in November 2026), the sidereal lunar longitude <code>λ_sid</code> determines both the Janma Nakshatra (0..26) and the Navamsha D9 sign (0..11):</p>
+  <pre><code>λ_sid = (λ_trop - A_Lahiri(T)) mod 360°
+Nakshatra_Index = floor(λ_sid / 13.3333333333°)   // 27 segments of 13°20'
+Pada_Number     = floor((λ_sid mod 13.3333333333°) / 3.3333333333°) + 1
+Navamsha_Sign   = floor(λ_sid / 3.3333333333°) mod 12</code></pre>
+
+  <h2>3. Ashtakoota 8-Factor Scoring Table (36 Gunas Maximum)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Koota Level</th>
+        <th>Max Score</th>
+        <th>Mathematical Rule</th>
+        <th>Long-Term Partnership Interpretation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1. Varna (Варна)</strong></td>
+        <td>1 Guna</td>
+        <td>4-tier classification of Moon Rashi</td>
+        <td>Alignment of social ambition and work responsibility</td>
+      </tr>
+      <tr>
+        <td><strong>2. Vashya (Вашья)</strong></td>
+        <td>2 Gunas</td>
+        <td>5-group magnetic attraction matrix</td>
+        <td>Mutual support and natural balance of initiative</td>
+      </tr>
+      <tr>
+        <td><strong>3. Tara (Тара)</strong></td>
+        <td>3 Gunas</td>
+        <td><code>((Nakshatra_B - Nakshatra_A) mod 27) mod 9</code></td>
+        <td>Event fortune, mutual protection and crisis resilience</td>
+      </tr>
+      <tr>
+        <td><strong>4. Yoni (Йони)</strong></td>
+        <td>4 Gunas</td>
+        <td>14 biological Nakshatra symbols matrix</td>
+        <td>Physical chemistry, temperament and domestic comfort</td>
+      </tr>
+      <tr>
+        <td><strong>5. Graha Maitri (Граха Майтри)</strong></td>
+        <td>5 Gunas</td>
+        <td>Naisargika planetary friendship of Rashi lords</td>
+        <td>Psychological harmony, everyday dialogue and friendship</td>
+      </tr>
+      <tr>
+        <td><strong>6. Gana (Гана)</strong></td>
+        <td>6 Gunas</td>
+        <td>Deva, Manushya, and Rakshasa triad</td>
+        <td>Reaction to stress, lifestyle pace and conflict resolution</td>
+      </tr>
+      <tr>
+        <td><strong>7. Bhakoot (Бхакут)</strong></td>
+        <td>7 Gunas</td>
+        <td>Harmonic sign ratios (1/7, 3/11, 4/10 vs 6/8, 2/12)</td>
+        <td>Material prosperity, family growth and shared rhythm</td>
+      </tr>
+      <tr>
+        <td><strong>8. Nadi (Нади)</strong></td>
+        <td>8 Gunas</td>
+        <td>Adi (Vata), Madhya (Pitta), Antya (Kapha) pulse</td>
+        <td>Physiological resonance and Nadi Dosha cancellation check</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Repository &amp; MIT source code: <a href="https://github.com/VedaAstro/ashtakoot-kundali-matching-36-gunas">github.com/VedaAstro/ashtakoot-kundali-matching-36-gunas</a></p>
+</main>
+</body>
+</html>
