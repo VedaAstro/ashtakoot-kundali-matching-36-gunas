@@ -1,0 +1,22 @@
+{
+  "name": "ashtakoot-kundali-matching-36-gunas",
+  "version": "1.0.0",
+  "description": "Vedic Ashtakoota 36 Gunas Compatibility Matrix, 27 Lunar Nakshatras, Navamsha D9 Synastry & Lahiri Sidereal Equations.",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VedaAstro/ashtakoot-kundali-matching-36-gunas.git"
+  },
+  "homepage": "https://vedaastro.github.io/ashtakoot-kundali-matching-36-gunas/",
+  "keywords": [
+    "ashtakoota",
+    "kundali-matching",
+    "36-gunas",
+    "synastry",
+    "navamsha-d9",
+    "jyotish",
+    "nakshatra",
+    "compatibility"
+  ]
+}
